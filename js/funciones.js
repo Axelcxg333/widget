@@ -83,7 +83,8 @@ function buscarLugarPorID(placeId) {
             if (response.imagenes.length > 0) {
                 html += '<div class="place-images">';
                 response.imagenes.forEach(function (imgUrl) {
-                    html += `<img src="${imgUrl}" class="img-fluid rounded m-1" style="width: 100px; height: 100px;">`;
+                    html += `<img src="${imgUrl}" class="img-fluid rounded m-1 image-preview" style="width: 100px; height: 100px; object-fit: cover; cursor: pointer;"
+                                data-bs-toggle="modal" data-bs-target="#imageModal" data-src="${imgUrl}" >`;
                 });
                 html += '</div>';
             }
@@ -92,6 +93,11 @@ function buscarLugarPorID(placeId) {
             html += `<p><strong>Dirección:</strong> ${response.direccion}</p>`;
 
             $('.place-body').html(html);
+
+            $(".image-preview").click(function () {
+                let imgUrl = $(this).attr("data-src");
+                $("#modalImage").attr("src", imgUrl);
+            });
 
             $(".review-header").html(`
                 <h4>Reseñas</h4>
