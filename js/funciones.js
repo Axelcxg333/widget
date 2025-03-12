@@ -89,7 +89,7 @@ function buscarLugarPorID(placeId) {
                 html += '</div>';
             }
 
-            html += `<h4>${response.nombre}</h4>`;
+            html += `<br><h4>${response.nombre}</h4>`;
             html += `<p><strong>Dirección:</strong> ${response.direccion}</p>`;
 
             $('.place-body').html(html);
