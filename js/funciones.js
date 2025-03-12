@@ -55,6 +55,12 @@ $(document).ready(function () {
 });
 
 function buscarLugarPorID(placeId) {
+
+    let googleMapsUrl = `https://www.google.com/maps/place/?q=place_id:${placeId}`;
+    $("#btn-ver-mas").off("click").on("click", function () {
+        window.open(googleMapsUrl, "_blank");
+    });
+
     $.ajax({
         url: 'procesos/search.php',
         type: 'POST',

@@ -42,7 +42,7 @@
                     <p class="text-muted">Aquí aparecerán las reseñas del lugar.</p>
                 </div>
                 <div class="review-footer text-center mt-3">
-                    <button class="btn btn-primary">Cargar más reseñas</button>
+                    <button id="btn-ver-mas" class="btn btn-primary">Ver en Google Maps</button>
                 </div>
             </div>
         </div>
